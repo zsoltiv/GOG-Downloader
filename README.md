@@ -24,6 +24,12 @@ go build -o gog_dl
 ## Setup
 Dump cookies to `cookies.json`. [EditThisCookie](https://www.editthiscookie.com/) extension's recommended. Netscape will also be supported soon. 
 
+### Config file
+Instead of repeatedly specifying commandline arguments, options can be stored in a file named `options.json`.
+Currently, the program looks for this file in the working directory only.
+
+The following options are supported:
+
 |Option|Info|
 | --- | --- |
 |platform|Item platform. windows/win, linux, mac/osx.
