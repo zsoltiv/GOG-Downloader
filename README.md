@@ -22,6 +22,15 @@ Dump cookies to `cookies.json`. EditThisCookie Chrome extension's recommended. N
 |goodies|Include goodies.
 |outPath|Where to download to. Path will be made if it doesn't already exist.
 
+## Building
+
+Building this program requires a working [Go](https://go.dev/doc/install) toolchain.
+
+After installing Go, you can build the project with
+```
+go build -o gog_dl
+```
+
 ## Usage
 Args take priority over the config file.
 
