@@ -22,7 +22,7 @@ Dump cookies to `cookies.json`. EditThisCookie Chrome extension's recommended. N
 |goodies|Include goodies.
 |outPath|Where to download to. Path will be made if it doesn't already exist.
 
-# Usage
+## Usage
 Args take priority over the config file.
 
 Download by search:   
@@ -58,5 +58,5 @@ Options:
   --help, -h             display this help and exit
 ```
 
-# Disclaimer  
+## Disclaimer  
 - GOG Downloader has no partnership, sponsorship or endorsement with GOG or CD PROJEKT.
