@@ -116,16 +116,13 @@ func checkLang(userLang string) bool {
 }
 
 func parseCfg() (*Config, error) {
-	cfg, err := readConfig()
-	if err != nil {
-		return nil, err
-	}
-
 	args := parseArgs()
 	query := strings.TrimSpace(args.Query)
 	if query != "" && len(query) < 3 {
 		return nil, errors.New("query must be at least two characters")
 	}
+
+	cfg, _ := readConfig()
 
 	cfg.Query = args.Query
 	if args.Platform != "" {
