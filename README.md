@@ -12,7 +12,7 @@ CLI GOG downloader written in Go for Windows, Linux, macOS and Android.
 - Resumable downloads of incomplete downloads
 
 ## Setup
-Dump cookies to `cookies.json`. EditThisCookie Chrome extension's recommended. Netscape will also be supported soon. 
+Dump cookies to `cookies.json`. [EditThisCookie](https://www.editthiscookie.com/) extension's recommended. Netscape will also be supported soon. 
 
 |Option|Info|
 | --- | --- |
