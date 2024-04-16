@@ -15,7 +15,6 @@ import (
 	"path"
 	"path/filepath"
 	"regexp"
-	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -81,32 +80,6 @@ func handleErr(errText string, err error, _panic bool) {
 		panic(errString)
 	}
 	fmt.Println(errString)
-}
-
-func wasRunFromSrc() bool {
-	buildPath := filepath.Join(os.TempDir(), "go-build")
-	return strings.HasPrefix(os.Args[0], buildPath)
-}
-
-func getScriptDir() (string, error) {
-	var (
-		ok    bool
-		err   error
-		fname string
-	)
-	runFromSrc := wasRunFromSrc()
-	if runFromSrc {
-		_, fname, _, ok = runtime.Caller(0)
-		if !ok {
-			return "", errors.New("Failed to get script filename.")
-		}
-	} else {
-		fname, err = os.Executable()
-		if err != nil {
-			return "", err
-		}
-	}
-	return filepath.Dir(fname), nil
 }
 
 func readConfig() (*Config, error) {
@@ -595,16 +568,6 @@ func init() {
 }
 
 func main() {
-	scriptDir, err := getScriptDir()
-	if err != nil {
-		panic(err)
-	}
-
-	err = os.Chdir(scriptDir)
-	if err != nil {
-		panic(err)
-	}
-
 	cfg, err := parseCfg()
 	if err != nil {
 		handleErr("failed to parse config/args", err, true)
